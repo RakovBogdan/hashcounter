@@ -123,3 +123,4 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
+MAX_UPLOAD_SIZE = 10240  # Maximum file size is 10KBs
