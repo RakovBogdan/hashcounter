@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class Document(models.Model):
+    document = models.FileField(upload_to='./')
+    sha256 = models.CharField(max_length=256)
+    # uploaded_count = models.DecimalField()
