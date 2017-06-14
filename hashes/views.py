@@ -11,6 +11,12 @@ def model_form_upload(request):
             file_path = doc.filepath()
             sha_256 = hashlib.sha256(open(file_path, 'rb').read()).hexdigest()
             doc.sha256 = sha_256
+            doc.uploaded_count = 1
+            for saved_doc in Document.objects.all():
+                if saved_doc.sha256 == sha_256:
+                    saved_doc.uploaded_count += 1
+                    doc.uploaded_count += 1
+                    saved_doc.save()
             doc.save()
     else:
         form = DocumentForm()

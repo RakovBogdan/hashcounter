@@ -12,7 +12,7 @@
     {% for obj in documents %}
       <li>
         <a href="{{ obj.document.url }}">{{ obj.document.name }}</a>
-        (SHA256 sum: {{ obj.sha256 }})
+        (SHA256 sum: {{ obj.sha256 }}, uploaded <b> {{ obj.uploaded_count }} </b> times)
       </li>
     {% endfor %}
   </ul>
